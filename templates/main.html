@@ -11,7 +11,12 @@
         <div class="hero-content">
             <h2>Smart & Secure Banking</h2>
             <p>Experience a new way of banking with innovative solutions tailored just for you.</p>
-            <button class="cta-button">Contact AI Assistant</button>
+            {% if session['user_email'] %}
+                    <button class="cta-button">Contact our AI Assistant</button>
+            {% else %}
+                    <button class="cta-button" style="background-color: IndianRed; cursor: default;">🔒 Log in to use our AI Assistant</button>
+            {% endif %}
+
         </div>
     </section>
 

@@ -2,8 +2,8 @@
 footer {
     text-align: center;
     padding: 15px;
-    background: #007bff;
-    color: white;
+    background: linear-gradient(to top, #6C7D8C 20%, rgba(108, 125, 140, 0));
+    color: rgba(0, 0, 0, 0.9);
     position: fixed;
     left: 0;
     bottom: 0;

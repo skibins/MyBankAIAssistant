@@ -3,11 +3,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #007bff;
-    color: white;
+    background: linear-gradient(to bottom, #6C7D8C 20%, rgba(108, 125, 140, 0));
+    color: rgba(0, 0, 0, 0.9);
     padding: 20px 10%;
+    position: relative;
+
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -15,9 +18,12 @@ header {
 
 .logo img {
     height: 50px;
+    width: 50px;
+    border-radius: 50%;
     margin-right: 10px;
 }
 
+/* Nawigacja */
 nav ul {
     list-style: none;
     display: flex;
@@ -31,7 +37,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
     font-size: 18px;
     cursor: pointer;
