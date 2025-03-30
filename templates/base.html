@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MyBank{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='includes/header/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='includes/footer/footer.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+    <main id="content" class="hidden">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    {% block extra_js %}{% endblock %}
+
+    <script src="{{ url_for('static', filename='includes/header/BankRoute.js') }}"></script>
+
+</body>
+</html>

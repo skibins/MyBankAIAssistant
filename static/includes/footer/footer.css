@@ -1,0 +1,12 @@
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 1;
+}

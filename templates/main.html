@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/main.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Smart & Secure Banking</h2>
+            <p>Experience a new way of banking with innovative solutions tailored just for you.</p>
+            <button class="cta-button">Contact AI Assistant</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Fast Transactions</h3>
+            <p>Enjoy seamless and quick transactions worldwide.</p>
+        </div>
+        <div class="feature">
+            <h3>24/7 Support</h3>
+            <p>Our dedicated team is available anytime to assist you.</p>
+        </div>
+        <div class="feature">
+            <h3>Top Security</h3>
+            <p>Your funds and data are protected with the latest technology.</p>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='main/main.js') }}"></script>
+{% endblock %}

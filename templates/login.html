@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}MyBank - Login & Registration{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/login.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="auth-container">
+    <div class="form-container login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="cta-button">Log In</button>
+        </form>
+        <p>Don't have an account? <span class="toggle-form" id="toRegister">Register here</span></p>
+    </div>
+
+    <div class="form-container register-form" style="display: none;">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" name="password" placeholder="Create a password" required>
+            </div>
+            <div class="input-group">
+                <label for="registerConfirmPassword">Confirm Password</label>
+                <input type="password" id="registerConfirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="cta-button">Register</button>
+        </form>
+        <p>Already have an account? <span class="toggle-form" id="toLogin">Login here</span></p>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='login/AuthFormSwitcher.js') }}"></script>
+{% endblock %}

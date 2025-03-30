@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='services/services.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="services-container">
+        <h1 class="services-header">Our Services</h1>
+        <div class="service">
+            <img src="{{ url_for('static', filename='assets/icons/credit-card.png') }}" alt="Credit Cards">
+            <h2>Credit Cards</h2>
+            <p>We offer a variety of credit cards with different benefits and rewards.</p>
+        </div>
+        <div class="service">
+            <img src="{{ url_for('static', filename='assets/icons/bank.png') }}" alt="Loans">
+            <h2>Loans</h2>
+            <p>We provide personal, mortgage, and business loans with competitive interest rates.</p>
+        </div>
+        <div class="service">
+            <img src="{{ url_for('static', filename='assets/icons/bank-transfer.png') }}" alt="Investments">
+            <h2>Investments</h2>
+            <p>We offer various investment options, including stocks, bonds, and mutual funds.</p>
+        </div>
+        <div class="service">
+            <img src="{{ url_for('static', filename='assets/icons/bank-account.png') }}" alt="Insurance">
+            <h2>Insurance</h2>
+            <p>We provide life, health, and property insurance to protect your assets.</p>
+        </div>
+        <div class="service">
+            <img src="{{ url_for('static', filename='assets/icons/piggy-bank.png') }}" alt="Savings">
+            <h2>Savings Accounts</h2>
+            <p>Earn interest with our high-yield savings accounts designed for your financial goals.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='main/main.js') }}"></script>
+{% endblock %}
