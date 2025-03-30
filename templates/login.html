@@ -8,9 +8,10 @@
 
 {% block content %}
     <div class="auth-container">
+    {% if not show_register_form %}
     <div class="form-container login-form">
         <h2>Login</h2>
-        <form id="loginForm">
+        <form id="loginForm" action="/login" method="post">
             <div class="input-group">
                 <label for="loginEmail">Email</label>
                 <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
@@ -21,12 +22,19 @@
             </div>
             <button type="submit" class="cta-button">Log In</button>
         </form>
-        <p>Don't have an account? <span class="toggle-form" id="toRegister">Register here</span></p>
+         <p>Don't have an account? <a href="{{ url_for('routes.toggle_register') }}">Register here</a></p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p style="color: #D9534F; font-weight: bold;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
-
-    <div class="form-container register-form" style="display: none;">
+    {% else %}
+    <div class="form-container register-form">
         <h2>Register</h2>
-        <form id="registerForm">
+        <form id="registerForm" action="/register" method="post">
             <div class="input-group">
                 <label for="registerEmail">Email</label>
                 <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
@@ -41,12 +49,20 @@
             </div>
             <button type="submit" class="cta-button">Register</button>
         </form>
-        <p>Already have an account? <span class="toggle-form" id="toLogin">Login here</span></p>
+        <p>Already have an account? <a href="{{ url_for('routes.toggle_login') }}">Login here</a></p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p style="color: #D9534F; font-weight: bold;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
+        {% endif %}
 </div>
 
 {% endblock %}
 
 {% block extra_js %}
-    <script src="{{ url_for('static', filename='login/AuthFormSwitcher.js') }}"></script>
+    <script src="{{ url_for('static', filename='login/login.js') }}"></script>
 {% endblock %}
