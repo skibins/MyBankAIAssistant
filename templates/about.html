@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='about/about.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="about-container">
+        <h1 class="about-header">About Us</h1>
+        <p class="about-description">
+            At MyBank, we are committed to providing innovative banking solutions that empower our customers.
+            With years of experience in the financial sector, we offer secure, efficient, and customer-focused
+            services tailored to your needs.
+        </p>
+
+        <div class="team-section">
+            <h2 class="team-header">Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='assets/team/cfo.png') }}" alt="CFO">
+                    <h3>Jane Smith</h3>
+                    <p>Chief Financial Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='assets/team/ceo.jpg') }}" alt="CEO">
+                    <h3>Ja Ski</h3>
+                    <p>Chief Executive Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='assets/team/cto.png') }}" alt="CTO">
+                    <h3>Michael Brown</h3>
+                    <p>Chief Technology Officer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-section">
+            <h2 class="mission-header">Our Mission</h2>
+            <p>
+                Our mission is to redefine banking by integrating advanced technology with personalized customer service.
+                We strive to make financial services accessible, transparent, and seamless for everyone.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='main/main.js') }}"></script>
+{% endblock %}

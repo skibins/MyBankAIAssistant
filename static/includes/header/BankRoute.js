@@ -3,6 +3,7 @@ class BankRoute {
         this.homeButton = document.getElementById("homeButton");
         this.loginButton = document.getElementById("loginButton");
         this.servicesButton = document.getElementById("servicesButton");
+        this.aboutButton = document.getElementById("aboutButton");
 
         this.init();
     }
@@ -16,6 +17,9 @@ class BankRoute {
         }
         if (this.servicesButton) {
             this.servicesButton.addEventListener("click", () => this.redirectTo('/services'));
+        }
+        if (this.aboutButton) {
+            this.aboutButton.addEventListener("click", () => this.redirectTo('/about'));
         }
     }
 
