@@ -1,4 +1,3 @@
 class Config:
-    SECRET_KEY = 'supersecretkey'  # Change this in production
+    GOOGLE_GEMINI_API_KEY = 'supersecretkey'  # API
     DATA_FILE = 'data/users.json'  # Path to the JSON file
-    #test drugi
