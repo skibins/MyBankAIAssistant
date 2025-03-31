@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='assistant/assistant.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="chat-container">
+        <div class="hot-topics">
+            <div class="topic-card">
+                <h3>Lost Credit Card</h3>
+                <p>Immediately block your card if lost or stolen. Request replacement online.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Forgot Password</h3>
+                <p>Reset your online banking password securely using SMS verification.</p>
+            </div>
+            <div class="topic-card">
+                <h3>Fraud Alert</h3>
+                <p>Learn how to recognize and report suspicious transactions in your account.</p>
+            </div>
+        </div>
+
+        <div class="chat-interface">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your question here..." id="userInput">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='assistant/assistant.js') }}"></script>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+
+            if(message) {
+                // Add user message
+                addMessage(message, 'user');
+
+                // Simulate AI response (replace with actual API call)
+                setTimeout(() => {
+                    addMessage("Thank you for your question. Our virtual assistant is processing your request...", 'ai');
+                }, 1000);
+
+                input.value = '';
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+
+            // Automatyczne przewijanie
+            messagesDiv.scrollTo({
+                top: messagesDiv.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+{% endblock %}
