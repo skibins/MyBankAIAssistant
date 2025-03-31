@@ -76,3 +76,7 @@ def services():
 @routes.route('/about')
 def about():
     return render_template('about.html')
+
+@routes.route('/assistant')
+def assistant():
+    return render_template('assistant.html')

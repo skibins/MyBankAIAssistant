@@ -53,6 +53,11 @@
                     "description": "Development of low-level software for hardware devices."
                 }
             ]
+        },
+        {
+            "email": "lalaxd20@test.pl",
+            "password": "lala",
+            "topics": []
         }
     ]
 }
