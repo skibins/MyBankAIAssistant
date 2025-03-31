@@ -25,11 +25,12 @@
 
         <div class="chat-interface">
             <div class="chat-messages" id="chatMessages">
-                <!-- Messages will appear here -->
+                <div class="message ai-message">Dear Customer, I am MyBank's AI Assistant. How can I help you today? </div>
+
             </div>
             <div class="chat-input">
                 <input type="text" placeholder="Type your question here..." id="userInput">
-                <button onclick="sendMessage()">Send</button>
+                <button onclick="chatApp.sendMessage()">Send</button>
             </div>
         </div>
     </div>
@@ -37,36 +38,4 @@
 
 {% block extra_js %}
     <script src="{{ url_for('static', filename='assistant/assistant.js') }}"></script>
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('userInput');
-            const message = input.value.trim();
-
-            if(message) {
-                // Add user message
-                addMessage(message, 'user');
-
-                // Simulate AI response (replace with actual API call)
-                setTimeout(() => {
-                    addMessage("Thank you for your question. Our virtual assistant is processing your request...", 'ai');
-                }, 1000);
-
-                input.value = '';
-            }
-        }
-
-        function addMessage(text, sender) {
-            const messagesDiv = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}-message`;
-            messageDiv.textContent = text;
-            messagesDiv.appendChild(messageDiv);
-
-            // Automatyczne przewijanie
-            messagesDiv.scrollTo({
-                top: messagesDiv.scrollHeight,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 {% endblock %}

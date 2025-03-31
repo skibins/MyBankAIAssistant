@@ -1,10 +1,27 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, Blueprint
+from flask import Flask, render_template, request, redirect, url_for, session, flash, Blueprint, jsonify
 from app.user import User
+from app.gemini import GeminiAPI
 import config
+from config import Config
 
 # Initialize the blueprint
 routes = Blueprint('routes', __name__)
+config = Config()
+gemini_api = GeminiAPI(config)
 
+@routes.route('/get_response', methods=['POST'])
+def get_response():
+    """
+    Odbiera wiadomość użytkownika i zwraca odpowiedź z API Google Gemini.
+    """
+    data = request.get_json()
+    user_input = data.get("message", "")
+
+    if not user_input:
+        return jsonify({"error": "No input provided"}), 400
+
+    ai_response = gemini_api.get_response(user_input)
+    return jsonify({"response": ai_response})
 
 @routes.route('/login', methods=['GET', 'POST'])
 def login():
@@ -17,7 +34,7 @@ def login():
         password = request.form['password']
 
         # Load users from the JSON file
-        users = User.load_data(config.Config.DATA_FILE)['users']
+        users = User.load_data(config.DATA_FILE)['users']
 
         # Check if the login credentials are correct
         if User.authenticate(email, password, users):
@@ -37,7 +54,7 @@ def register():
     confirm_password = request.form['confirmPassword']
 
     # Load users from the JSON file
-    users = User.load_data(config.Config.DATA_FILE)['users']
+    users = User.load_data(config.DATA_FILE)['users']
 
     # Register the new user
     if not User.register(email, password, confirm_password, users, config.Config.DATA_FILE):
@@ -79,4 +96,5 @@ def about():
 
 @routes.route('/assistant')
 def assistant():
+    gemini_api.clear_history()
     return render_template('assistant.html')
