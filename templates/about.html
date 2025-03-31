@@ -20,17 +20,29 @@
             <div class="team-members">
                 <div class="team-member">
                     <img src="{{ url_for('static', filename='assets/team/cfo.png') }}" alt="CFO">
-                    <h3>Jane Smith</h3>
+                    {% if 'user_email' in session and session['user_email'].split('@')[0] == 'sebastian' %}
+                    <h3 style="color: #ff9100;">Sebastian Paszek</h3>
+                    {% else %}
+                    <h3>Sebastian Paszek</h3>
+                    {% endif %}
                     <p>Chief Financial Officer</p>
                 </div>
                 <div class="team-member">
                     <img src="{{ url_for('static', filename='assets/team/ceo.jpg') }}" alt="CEO">
+                    {% if 'user_email' in session and session['user_email'].split('@')[0] == 'ja' %}
+                    <h3 style="color: #ff9100;">Ja Ski</h3>
+                    {% else %}
                     <h3>Ja Ski</h3>
+                    {% endif %}
                     <p>Chief Executive Officer</p>
                 </div>
                 <div class="team-member">
                     <img src="{{ url_for('static', filename='assets/team/cto.png') }}" alt="CTO">
-                    <h3>Michael Brown</h3>
+                    {% if 'user_email' in session and session['user_email'].split('@')[0] == 'michal' %}
+                    <h3 style="color: #ff9100;">Michal Bujok</h3>
+                    {% else %}
+                    <h3>Michal Bujok</h3>
+                    {% endif %}
                     <p>Chief Technology Officer</p>
                 </div>
             </div>
