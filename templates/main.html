@@ -12,7 +12,7 @@
             <h2>Smart & Secure Banking</h2>
             <p>Experience a new way of banking with innovative solutions tailored just for you.</p>
             {% if session['user_email'] %}
-                    <button class="cta-button">Contact our AI Assistant</button>
+                    <button class="cta-button">Hello {{ session['user_email'].split('@')[0].capitalize() }}! Contact our AI Assistant</button>
             {% else %}
                     <button class="cta-button" style="background-color: IndianRed; cursor: default;">🔒 Log in to use our AI Assistant</button>
             {% endif %}

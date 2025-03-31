@@ -9,7 +9,7 @@
                 <li><a id="servicesButton">Services</a></li>
                 <li><a id="aboutButton">About Us</a></li>
                  {% if session['user_email'] %}
-                    <li><a href="/logout" style="color: #ff9100;">Log out, {{ session['user_email'] }}</a></li>
+                    <li><a href="/logout" style="color: #ff9100;">Log out</a></li>
                 {% else %}
                     <li><a id="loginButton">Login</a></li>
                 {% endif %}
