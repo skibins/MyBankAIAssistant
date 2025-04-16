@@ -9,24 +9,25 @@
 {% block content %}
     <div class="chat-container">
         <div class="hot-topics">
-            <div class="topic-card">
-                <h3>Lost Credit Card</h3>
-                <p>Immediately block your card if lost or stolen. Request replacement online.</p>
+            <div class="topic-card" id="topic1">
+                <h3 id="topicTitle1">Lost Credit Card</h3>
+                <p  id="topicDesc1">Immediately block your card if lost or stolen. Request replacement online.</p>
             </div>
-            <div class="topic-card">
-                <h3>Forgot Password</h3>
-                <p>Reset your online banking password securely using SMS verification.</p>
+            <div class="topic-card" id="topic2">
+                <h3 id="topicTitle2">Forgot Password</h3>
+                <p  id="topicDesc2">Reset your online banking password securely using SMS verification.</p>
             </div>
-            <div class="topic-card">
-                <h3>Fraud Alert</h3>
-                <p>Learn how to recognize and report suspicious transactions in your account.</p>
+            <div class="topic-card" id="topic3">
+                <h3 id="topicTitle3">Fraud Alert</h3>
+                <p  id="topicDesc3">Learn how to recognize and report suspicious transactions in your account.</p>
             </div>
         </div>
 
         <div class="chat-interface">
             <div class="chat-messages" id="chatMessages">
-                <div class="message ai-message">Dear Customer, I am MyBank's AI Assistant. How can I help you today? </div>
-
+                <div class="message ai-message">
+                    Dear Customer, I am MyBank's AI Assistant. How can I help you today?
+                </div>
             </div>
             <div class="chat-input">
                 <input type="text" placeholder="Type your question here..." id="userInput">

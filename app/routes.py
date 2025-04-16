@@ -21,7 +21,8 @@ def get_response():
         return jsonify({"error": "No input provided"}), 400
 
     ai_response = gemini_api.get_response(user_input)
-    return jsonify({"response": ai_response})
+    # Zwracamy już słownik z kluczami: chat_response, topic_title, topic_description
+    return jsonify(ai_response)
 
 @routes.route('/login', methods=['GET', 'POST'])
 def login():
