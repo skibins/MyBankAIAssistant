@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Loans - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='services/services_subpage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Loans</h1>
+            <p>Financing solutions for your needs</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="card-container">
+            <div class="card">
+                <h3>Personal Loans</h3>
+                <p>Fund your goals with flexible options</p>
+                <ul>
+                    <li>Fixed rates from 5.99% APR</li>
+                    <li>Loan amounts up to $100,000</li>
+                    <li>Fast approval process</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Mortgages</h3>
+                <p>Make homeownership a reality</p>
+                <ul>
+                    <li>Fixed and adjustable rates</li>
+                    <li>Low down payment options</li>
+                    <li>Online application</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Auto Loans</h3>
+                <p>Drive away in your dream car</p>
+                <ul>
+                    <li>Competitive rates</li>
+                    <li>Loan terms up to 84 months</li>
+                    <li>Pre-approval available</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

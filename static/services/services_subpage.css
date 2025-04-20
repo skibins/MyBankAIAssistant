@@ -1,0 +1,93 @@
+/* Service Hero Section */
+.service-hero {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+.service-hero .hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+.service-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.service-hero p {
+    font-size: 20px;
+}
+
+/* Service Details Section */
+.service-details {
+    padding: 0 5% 60px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 350px;
+    min-height: 300px;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: #2C3E50;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.card ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}

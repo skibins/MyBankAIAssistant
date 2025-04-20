@@ -58,6 +58,10 @@
     line-height: 1.4;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Responsive design */
 @media (max-width: 1200px) {
     .services-container {

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Investments - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='services/services_subpage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Investments</h1>
+            <p>Grow your wealth with our expert guidance</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="card-container">
+            <div class="card">
+                <h3>Stocks & ETFs</h3>
+                <p>Build a diversified portfolio with individual stocks and ETFs</p>
+                <ul>
+                    <li>Commission-free trading</li>
+                    <li>Research and analysis tools</li>
+                    <li>Fractional shares available</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Retirement Accounts</h3>
+                <p>Plan for your future with tax-advantaged accounts</p>
+                <ul>
+                    <li>Traditional and Roth IRAs</li>
+                    <li>401(k) rollovers</li>
+                    <li>Automatic contributions</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Managed Portfolios</h3>
+                <p>Let our experts manage your investments</p>
+                <ul>
+                    <li>Customized asset allocation</li>
+                    <li>Regular rebalancing</li>
+                    <li>Quarterly performance reports</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

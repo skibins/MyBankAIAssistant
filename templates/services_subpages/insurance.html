@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Insurance - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='services/services_subpage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Insurance</h1>
+            <p>Protect what matters most with comprehensive coverage</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="card-container">
+            <div class="card">
+                <h3>Life Insurance</h3>
+                <p>Financial security for your loved ones</p>
+                <ul>
+                    <li>Term and whole life options</li>
+                    <li>Flexible coverage amounts</li>
+                    <li>Living benefits available</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Home Insurance</h3>
+                <p>Protection for your home and belongings</p>
+                <ul>
+                    <li>Coverage for natural disasters</li>
+                    <li>Personal liability protection</li>
+                    <li>Optional valuable items coverage</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Auto Insurance</h3>
+                <p>Comprehensive coverage for your vehicles</p>
+                <ul>
+                    <li>Collision and comprehensive</li>
+                    <li>Roadside assistance</li>
+                    <li>Multi-vehicle discounts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
