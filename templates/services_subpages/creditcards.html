@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Credit Cards - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='services/services_subpage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Credit Cards</h1>
+            <p>Discover cards with rewards that match your lifestyle</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="card-container">
+            <div class="card">
+                <h3>Travel Rewards</h3>
+                <p>Earn miles for every purchase and enjoy travel benefits</p>
+                <ul>
+                    <li>No foreign transaction fees</li>
+                    <li>Travel insurance included</li>
+                    <li>Airport lounge access</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Cash Back</h3>
+                <p>Get up to 5% cash back on everyday purchases</p>
+                <ul>
+                    <li>No annual fee</li>
+                    <li>Bonus cash back categories</li>
+                    <li>0% intro APR</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Business</h3>
+                <p>Tools to help grow your business</p>
+                <ul>
+                    <li>Employee cards with custom limits</li>
+                    <li>Detailed expense reporting</li>
+                    <li>Higher credit limits</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Savings Accounts - MyBank{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='services/services_subpage.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="service-hero">
+        <div class="hero-content">
+            <h1>Savings Accounts</h1>
+            <p>Grow your money with competitive interest rates</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="card-container">
+            <div class="card">
+                <h3>High-Yield Savings</h3>
+                <p>Earn more with our premium savings account</p>
+                <ul>
+                    <li>APY up to 4.50%</li>
+                    <li>No monthly maintenance fees</li>
+                    <li>FDIC insured up to $250,000</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Certificates of Deposit</h3>
+                <p>Lock in a fixed rate for your savings</p>
+                <ul>
+                    <li>Terms from 3 months to 5 years</li>
+                    <li>Higher rates for longer terms</li>
+                    <li>Early withdrawal options</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Money Market Accounts</h3>
+                <p>Combine checking flexibility with savings growth</p>
+                <ul>
+                    <li>Check-writing privileges</li>
+                    <li>Tiered interest rates</li>
+                    <li>Debit card access</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
