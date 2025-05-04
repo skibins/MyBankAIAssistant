@@ -1,3 +1,7 @@
+***More detailed version of this app can be found at skibins/MyBankAIAssistant2.0 (Java/Spring, solo project)***
+
+***For now please use 'dev' branch, as 'main' is currently experiencing some merge conflicts, Sebastian is responsible for the fix***
+
 # MyBank AI Assistant Documentation
 
 ## Table of Contents
