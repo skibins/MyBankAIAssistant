@@ -19,7 +19,7 @@
             <h2 class="team-header">Meet Our Team</h2>
             <div class="team-members">
                 <div class="team-member">
-                    <img src="{{ url_for('static', filename='assets/team/cfo.png') }}" alt="CFO">
+                    <img src="{{ url_for('static', filename='assets/team/cfo.jpeg') }}" alt="CFO">
                     {% if 'user_email' in session and session['user_email'].split('@')[0] == 'sebastian' %}
                     <h3 style="color: #ff9100;">Sebastian Paszek</h3>
                     {% else %}
@@ -37,7 +37,7 @@
                     <p>Chief Executive Officer</p>
                 </div>
                 <div class="team-member">
-                    <img src="{{ url_for('static', filename='assets/team/cto.png') }}" alt="CTO">
+                    <img src="{{ url_for('static', filename='assets/team/cto.jpeg') }}" alt="CTO">
                     {% if 'user_email' in session and session['user_email'].split('@')[0] == 'michal' %}
                     <h3 style="color: #ff9100;">Michal Bujok</h3>
                     {% else %}
