@@ -10,3 +10,19 @@ footer {
     width: 100%;
     flex-shrink: 1;
 }
+
+/* High Contrast Mode - Footer Styles */
+.high-contrast footer {
+    background: #000 !important;
+    border-top: 2px solid yellow;
+    color: yellow !important;
+}
+
+.high-contrast footer a {
+    color: yellow !important;
+}
+
+.high-contrast footer a:hover {
+    text-decoration: underline !important;
+    color: #fff !important;
+}

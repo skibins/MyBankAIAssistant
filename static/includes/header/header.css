@@ -7,13 +7,15 @@ header {
     color: rgba(0, 0, 0, 0.9);
     padding: 20px 10%;
     position: relative;
-
 }
 
 /* Logo */
 .logo {
     display: flex;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .logo img {
@@ -25,15 +27,16 @@ header {
 
 /* Navigation */
 nav {
-    padding: 15px 30px; /* Inner padding */
+    margin-left: auto;
+    padding: 15px 30px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center align items */
+    justify-content: center;
     align-items: center;
-    gap: 25px; /* Larger gap between links */
+    gap: 25px;
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -46,14 +49,13 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-size: 18px;
-    font-weight: 500; /* Bold text for a modern look */
+    font-weight: 500;
     padding: 10px 15px;
     border-radius: 8px;
-    transition: all 0.3s ease-in-out; /* Smooth transitions */
+    transition: all 0.3s ease-in-out;
     position: relative;
 }
 
-/* Hover underline effect */
 nav ul li a::after {
     content: "";
     display: block;
@@ -72,21 +74,191 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Hover effect */
 nav ul li a:hover {
     color: #f9f9f9;
-    background: rgba(44, 62, 80, 0.3); /* Subtle background highlight */
+    background: rgba(44, 62, 80, 0.3);
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
-    nav {
-        padding: 10px 20px;
+    header {
+        flex-direction: column;
+        padding-top: 60px;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
+    .accessibility-tools {
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+    }
+
+    nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding-right: 15px;
+    }
+
+    nav ul li a::before {
+        font-size: 0.7em;
     }
 }
 
+/* Accessibility Tools */
+.accessibility-tools {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
+
+.accessibility-tools button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.accessibility-tools button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast .hero-content,
+.high-contrast .feature {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid yellow;
+    color: yellow !important;
+}
+
+.high-contrast .feature::before {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.high-contrast main {
+    background: #000 !important;
+}
+
+.high-contrast .cta-button {
+    background: yellow !important;
+    color: #000 !important;
+    border: 2px solid white;
+}
+
+.high-contrast header {
+    background: #000 !important;
+    border-bottom: 2px solid yellow;
+}
+
+.high-contrast .logo h1,
+.high-contrast nav ul li a {
+    color: yellow !important;
+}
+
+.high-contrast nav ul li a:hover {
+    background: rgba(255, 255, 0, 0.2) !important;
+}
+
+.high-contrast .accessibility-tools button {
+    color: yellow !important;
+    border-color: yellow !important;
+}
+
+.high-contrast .accessibility-tools button:hover {
+    background: rgba(255, 255, 0, 0.2) !important;
+}
+
+/* Dyslexic Font Mode */
+.dyslexic-font {
+    font-family: 'OpenDyslexic', sans-serif;
+}
+
+nav ul li a {
+    position: relative;
+    padding-right: 20px;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #2C3E50;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+nav ul li a::before {
+    content: "↗";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+    right: -5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.high-contrast nav ul li a::after {
+    background: yellow;
+}
+
+.high-contrast nav ul li a::before {
+    color: yellow;
+}
+
+.underline-mode a,
+.underline-mode button,
+.underline-mode [href],
+.underline-mode [onclick] {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 3px !important;
+}
+
+.accessibility-tools button.active {
+    background: rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.05);
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('static/assets/fonts/OpenDyslexic-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

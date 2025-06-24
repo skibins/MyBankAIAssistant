@@ -10,14 +10,37 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
 }
 
-/* Main Sectioon */
-
+/* Main Section */
 main {
     flex: 1;
     background: url('/static/assets/background.jpg') no-repeat center center/cover;
     padding-bottom: 30px;
     margin-top: -122px;
     padding-top: 122px;
+    transition: background 0.3s ease;
+}
+
+/* High Contrast Mode - Global Text Colors */
+.high-contrast {
+    color: yellow !important;
+}
+
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast p,
+.high-contrast span,
+.high-contrast li {
+    color: yellow !important;
+}
+
+.high-contrast a {
+    color: yellow !important;
+    text-decoration: underline !important;
 }

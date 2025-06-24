@@ -1,4 +1,12 @@
 <header>
+        <div class="accessibility-tools">
+            <button id="highContrastBtn" aria-label="Włącz wysoki kontrast">👁️</button>
+            <button id="fontIncreaseBtn" aria-label="Powiększ czcionkę">A+</button>
+            <button id="fontDecreaseBtn" aria-label="Pomniejsz czcionkę">A-</button>
+            <button id="fontResetBtn" aria-label="Resetuj czcionkę">A⟲</button>
+            <button id="dyslexicFontBtn" aria-label="Czcionka dla dyslektyków">Dyslexic</button>
+            <button id="underlineLinksBtn" aria-label="Podkreśl linki">🔗</button>
+        </div>
         <div class="logo">
            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="MyBank Logo">
             <h1>MyBank</h1>
@@ -15,4 +23,5 @@
                 {% endif %}
             </ul>
         </nav>
+        <script src="{{ url_for('static', filename='includes/header/header.js') }}"></script>
 </header>
