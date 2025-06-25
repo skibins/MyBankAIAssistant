@@ -9,8 +9,12 @@ html, body {
     flex-direction: column;
 }
 
-/* Login Form */
+.high-contrast body {
+    background-color: #000 !important;
+    color: yellow !important;
+}
 
+/* Login Form */
 .auth-container {
     max-width: 400px;
     margin: 50px auto;
@@ -21,9 +25,19 @@ html, body {
     margin-bottom: 130px;
 }
 
+.high-contrast .auth-container {
+    background: #000 !important;
+    border: 2px solid yellow !important;
+    box-shadow: 0 0 10px yellow !important;
+}
+
 h2 {
     text-align: center;
     color: rgba(0, 0, 0, 0.9);
+}
+
+.high-contrast h2 {
+    color: yellow !important;
 }
 
 .form-container {
@@ -40,13 +54,29 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="email"], input[type="password"] {
+.high-contrast label {
+    color: yellow !important;
+}
+
+input[type="email"],
+input[type="password"] {
     width: 100%;
     max-width: 380px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+.high-contrast input[type="email"],
+.high-contrast input[type="password"] {
+    background: #000 !important;
+    border: 2px solid yellow !important;
+    color: yellow !important;
+}
+
+.high-contrast input::placeholder {
+    color: #999 !important;
 }
 
 button.cta-button {
@@ -58,18 +88,68 @@ button.cta-button {
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s;
+    width: 100%;
+}
+
+.high-contrast button.cta-button {
+    background-color: yellow !important;
+    color: #000 !important;
+    border: 2px solid white !important;
 }
 
 button.cta-button:hover {
     background-color: #4C5C6C;
 }
 
+.high-contrast button.cta-button:hover {
+    background-color: #ffff00 !important;
+    box-shadow: 0 0 10px yellow !important;
+}
+
 p {
     text-align: center;
+}
+
+.high-contrast p {
+    color: yellow !important;
 }
 
 span.toggle-form {
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.high-contrast span.toggle-form,
+.high-contrast a {
+    color: yellow !important;
+    text-decoration: underline !important;
+}
+
+/* Error messages */
+.high-contrast [style*="color: #D9534F"] {
+    color: yellow !important;
+    background-color: #000 !important;
+    border: 2px solid yellow !important;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Focus states for accessibility */
+.high-contrast input:focus {
+    outline: 3px solid yellow !important;
+    box-shadow: 0 0 5px yellow !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 20px auto;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .high-contrast .auth-container {
+        border-width: 1px !important;
+    }
 }

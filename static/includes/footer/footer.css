@@ -13,8 +13,7 @@ footer {
 
 /* High Contrast Mode - Footer Styles */
 .high-contrast footer {
-    background: #000 !important;
-    border-top: 2px solid yellow;
+    background: transparent !important;
     color: yellow !important;
 }
 

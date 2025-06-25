@@ -214,22 +214,6 @@ nav ul li a::after {
     border-radius: 3px;
 }
 
-nav ul li a::before {
-    content: "↗";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8em;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover::before {
-    opacity: 1;
-    right: -5px;
-}
-
 nav ul li a:hover::after {
     width: 100%;
 }

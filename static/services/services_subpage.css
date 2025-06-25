@@ -10,6 +10,11 @@
     margin-bottom: 40px;
 }
 
+.high-contrast .service-hero {
+    background: #000 !important;
+    border-bottom: 2px solid yellow !important;
+}
+
 .service-hero .hero-content {
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
@@ -17,13 +22,27 @@
     max-width: 800px;
 }
 
+.high-contrast .service-hero .hero-content {
+    background: #000 !important;
+    border: 2px solid yellow !important;
+    color: yellow !important;
+}
+
 .service-hero h1 {
     font-size: 42px;
     margin-bottom: 15px;
 }
 
+.high-contrast .service-hero h1 {
+    color: yellow !important;
+}
+
 .service-hero p {
     font-size: 20px;
+}
+
+.high-contrast .service-hero p {
+    color: yellow !important;
 }
 
 /* Service Details Section */
@@ -51,9 +70,19 @@
     position: relative;
 }
 
+.high-contrast .card {
+    background-color: #000 !important;
+    border: 2px solid yellow !important;
+    color: yellow !important;
+}
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.high-contrast .card:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 0, 0.3) !important;
 }
 
 .card h3 {
@@ -64,10 +93,19 @@
     padding-bottom: 10px;
 }
 
+.high-contrast .card h3 {
+    color: yellow !important;
+    border-bottom: 2px solid yellow !important;
+}
+
 .card p {
     font-size: 16px;
     margin-bottom: 20px;
     color: #555;
+}
+
+.high-contrast .card p {
+    color: yellow !important;
 }
 
 .card ul {
@@ -78,6 +116,10 @@
 .card li {
     margin-bottom: 10px;
     color: #555;
+}
+
+.high-contrast .card li {
+    color: yellow !important;
 }
 
 /* Responsive Design */

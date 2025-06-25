@@ -58,7 +58,7 @@
     max-width: 350px;
     min-height: 150px;
     cursor: pointer;
-    position: relative;  /* To make sure overlay is positioned correctly */
+    position: relative;
     background-size: cover;
     background-position: center;
 }
@@ -84,18 +84,16 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.6);  /* White with transparency */
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
-    z-index: 1;  /* Ensure overlay stays on top of the image */
+    z-index: 1;
 }
 
-/* Text should stay above the overlay */
 .feature h3, .feature p {
     position: relative;
     z-index: 2;
 }
 
-/* Feature hover effect */
 .feature:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

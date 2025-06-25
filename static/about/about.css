@@ -7,6 +7,10 @@
     margin: 4rem 0;
 }
 
+.high-contrast .about-header {
+    color: yellow !important;
+}
+
 /* About description */
 .about-description {
     text-align: center;
@@ -14,6 +18,10 @@
     margin: 0 auto;
     font-size: 1.2rem;
     color: #555;
+}
+
+.high-contrast .about-description {
+    color: yellow !important;
 }
 
 /* Team section */
@@ -27,6 +35,10 @@
     font-weight: bold;
     color: #2C3E50;
     margin-bottom: 2rem;
+}
+
+.high-contrast .team-header {
+    color: yellow !important;
 }
 
 .team-members {
@@ -48,10 +60,20 @@
     min-height: 300px;
 }
 
+.high-contrast .team-member {
+    background-color: #000 !important;
+    border: 2px solid yellow !important;
+    color: yellow !important;
+}
+
 /* Team member hover effect */
 .team-member:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.high-contrast .team-member:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 0, 0.3) !important;
 }
 
 /* Team member images */
@@ -62,6 +84,11 @@
     margin-bottom: 1rem;
 }
 
+.high-contrast .team-member img {
+    filter: invert(100%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+    border: 2px solid yellow;
+}
+
 /* Team member text */
 .team-member h3 {
     font-size: 1.3rem;
@@ -69,9 +96,23 @@
     margin-bottom: 0.5rem;
 }
 
+.high-contrast .team-member h3 {
+    color: yellow !important;
+}
+
 .team-member p {
     font-size: 1rem;
     color: #7F8C8D;
+}
+
+.high-contrast .team-member p {
+    color: yellow !important;
+}
+
+/* Special highlight for logged-in team members */
+.high-contrast .team-member h3[style*="color: #ff9100"] {
+    color: yellow !important;
+    text-decoration: underline;
 }
 
 /* Mission section */
@@ -85,11 +126,20 @@
     margin-bottom: 100px;
 }
 
+.high-contrast .mission-section {
+    background-color: #000 !important;
+    border: 2px solid yellow !important;
+}
+
 .mission-header {
     font-size: 2rem;
     font-weight: bold;
     color: #2C3E50;
     margin-bottom: 1rem;
+}
+
+.high-contrast .mission-header {
+    color: yellow !important;
 }
 
 .mission-section p {
@@ -99,16 +149,20 @@
     margin: 0 auto;
 }
 
+.high-contrast .mission-section p {
+    color: yellow !important;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .team-members {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .team-members {
-        grid-template-columns: 1fr; /* 1 column for small screens */
+        grid-template-columns: 1fr;
     }
 
     .team-header,
